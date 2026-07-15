@@ -1,0 +1,36 @@
+Northstar Retail customer onboarding working session
+Date: 2026-07-10
+Attendees: Maya (Sales), Jordan (Revenue Operations), Priya (Implementation), Leo (Billing), and Sam (Customer Support)
+
+Purpose
+Understand why new enterprise customers are taking too long to reach their first successful order.
+
+Current process
+1. The Sales representative marks an opportunity as Closed Won in Salesforce after the contract is signed.
+2. Revenue Operations receives a Salesforce notification and manually creates the company, contacts, and contract summary in HubSpot.
+3. Revenue Operations copies the account name, legal entity, billing address, subscription tier, and promised launch date into a shared onboarding spreadsheet.
+4. The Implementation Manager is assigned manually in a weekly spreadsheet review. If the deal closes on Friday, assignment frequently waits until Monday.
+5. The Implementation Manager emails the customer for a technical contact, a purchase order, and preferred kickoff times.
+6. Billing creates a customer account in NetSuite only after a valid purchase order arrives. Billing often learns that a purchase order is missing after the kickoff has already been scheduled.
+7. The Implementation Manager creates a project plan in Asana, schedules the kickoff, and asks Customer Support to prepare the help-centre access list.
+8. Sales receives a Slack message when the kickoff is complete. There is no automatic update in Salesforce.
+
+Observed pain points
+- Sales data is retyped in HubSpot, the spreadsheet, Asana, and NetSuite.
+- The shared spreadsheet is the only view of onboarding status. Different teams overwrite dates and use different status labels.
+- Missing purchase orders are discovered late, delaying billing and launch.
+- Team members use Slack direct messages to chase ownership because the Salesforce notification does not show a named implementation owner.
+- A customer can receive a kickoff invite before their billing account is ready.
+- Support access is prepared from a manually maintained email list, so the wrong users can be invited.
+
+Targets and measures
+- Assign an Implementation Manager within two business hours of Closed Won.
+- Hold the kickoff within two business days when the purchase order and technical contact are complete.
+- Reduce manual data re-entry by at least 80 percent.
+- Do not schedule a kickoff until billing readiness is confirmed.
+
+Risks noted by the team
+- Incorrect legal entity or billing address can cause invoices to be rejected.
+- A promised launch date can be missed when an opportunity is not included in the weekly review.
+- Customer contact details can be stale when copied from a personal Sales spreadsheet.
+- There is no auditable record of who changed an onboarding date or why.

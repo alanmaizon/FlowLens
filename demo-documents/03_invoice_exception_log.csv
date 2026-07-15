@@ -1,0 +1,11 @@
+case_id,received_at,supplier,exception_type,owner,system,required_action,resolution_sla_hours,status
+EX-1001,2026-07-01T09:15:00Z,Atlas Packaging,Missing purchase order,Procurement Specialist,Coupa,Identify valid purchase order or obtain retrospective approval,4,Resolved after 19 hours
+EX-1002,2026-07-01T13:40:00Z,Brightline Freight,Duplicate invoice,Accounts Payable Analyst,NetSuite,Place invoice on hold and confirm duplicate with supplier,8,Resolved after 6 hours
+EX-1003,2026-07-02T10:05:00Z,Atlas Packaging,Missing purchase order,Procurement Specialist,Coupa,Identify valid purchase order or obtain retrospective approval,4,Resolved after 27 hours
+EX-1004,2026-07-02T15:55:00Z,Northbridge IT,Missing goods receipt,Budget Owner,Coupa,Confirm service delivery or dispute invoice,48,Open
+EX-1005,2026-07-03T11:10:00Z,Greenfield Supplies,Incorrect bank details,Procurement Specialist,SharePoint,Start approved supplier-change workflow,24,Resolved after 31 hours
+EX-1006,2026-07-04T09:30:00Z,Atlas Packaging,Missing purchase order,Procurement Specialist,Coupa,Identify valid purchase order or obtain retrospective approval,4,Open
+EX-1007,2026-07-05T14:20:00Z,Brightline Freight,Duplicate invoice,Accounts Payable Analyst,NetSuite,Place invoice on hold and confirm duplicate with supplier,8,Resolved after 4 hours
+EX-1008,2026-07-06T08:45:00Z,Northbridge IT,Missing goods receipt,Budget Owner,Coupa,Confirm service delivery or dispute invoice,48,Open
+EX-1009,2026-07-07T16:05:00Z,Atlas Packaging,Missing purchase order,Procurement Specialist,Coupa,Identify valid purchase order or obtain retrospective approval,4,Resolved after 22 hours
+EX-1010,2026-07-08T12:25:00Z,Greenfield Supplies,Incorrect tax amount,Accounts Payable Analyst,Coupa,Request corrected invoice and retain original evidence,24,Resolved after 18 hours
