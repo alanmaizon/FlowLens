@@ -30,4 +30,4 @@ venv/
 postgres-data/
 
 # Output
-.output/
+output/
