@@ -28,3 +28,6 @@ venv/
 
 # Runtime data
 postgres-data/
+
+# Output
+.output/
