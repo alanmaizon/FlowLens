@@ -4,7 +4,7 @@ from typing import Any, TypeVar
 
 from anthropic import Anthropic, APIError
 from anthropic.types import MessageParam, TextBlock
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 
 from app.core.config import Settings
 
@@ -46,7 +46,7 @@ class ClaudeMessagesGateway:
                 messages=[{"role": "user", "content": user_input}],
                 output_format=schema,
             )
-        except APIError as error:
+        except (APIError, ValidationError) as error:
             raise AIProviderError("Claude could not complete the structured analysis") from error
 
         parsed = response.parsed_output

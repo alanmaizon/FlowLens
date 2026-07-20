@@ -11,6 +11,11 @@
     "format:check": "prettier --check .",
     "test": "vitest",
     "test:run": "vitest run",
+    "demo:record": "node e2e/record-demo.mjs",
+    "demo:record:narrated": "node e2e/record-narrated-demo.mjs",
+    "demo:record:combined-analysis": "node e2e/record-combined-analysis-demo.mjs",
+    "demo:record:progress": "node e2e/record-analysis-progress-demo.mjs",
+    "demo:record:completed-report": "node e2e/record-completed-report-walkthrough.mjs",
     "check": "npm run format:check && npm run lint && npm run build"
   },
   "dependencies": {
@@ -27,6 +32,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
+    "@playwright/test": "^1.61.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@types/node": "^22.13.1",

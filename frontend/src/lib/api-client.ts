@@ -23,9 +23,30 @@ apiClient.interceptors.request.use((config) => {
   return config;
 });
 
+type ValidationErrorDetail = {
+  msg?: string;
+};
+
+type ApiErrorBody = {
+  detail?: string | ValidationErrorDetail[];
+};
+
 export function getApiErrorMessage(error: unknown, fallback: string) {
-  if (axios.isAxiosError<{ detail?: string }>(error)) {
-    return error.response?.data.detail ?? fallback;
+  if (!axios.isAxiosError<ApiErrorBody>(error)) {
+    return fallback;
+  }
+
+  const detail = error.response?.data.detail;
+  if (typeof detail === "string") {
+    return detail;
+  }
+  if (Array.isArray(detail)) {
+    return (
+      detail
+        .map((item) => item.msg)
+        .filter(Boolean)
+        .join(" ") || fallback
+    );
   }
   return fallback;
 }

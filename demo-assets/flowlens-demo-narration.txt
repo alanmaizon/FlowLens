@@ -1,0 +1,15 @@
+Welcome to FlowLens: an AI-powered business process analysis and transformation copilot.
+
+I built this with Codex, using GPT Five Point Six as a hands-on full-stack engineering partner. Together, we established a production-quality foundation: React and TypeScript on the frontend; FastAPI, PostgreSQL, and Docker on the backend; plus health checks, unit tests, and browser-based verification.
+
+A consultant signs in and creates a focused transformation project. This example, Northstar, is working to reduce accounts-payable exceptions and speed up finance operations.
+
+They can add meeting notes, SOPs, spreadsheets, PDFs, or Word documents. FlowLens stores those files in the project, extracts the relevant evidence, and makes it ready for analysis.
+
+The AI layer is deliberately designed as independent services, rather than one giant prompt. I moved the provider to Claude through the Anthropic Messages API and structured outputs. Separate services create the process model, executive summary, opportunity analysis, and implementation roadmap.
+
+The report is a decision-ready view of the current state: the process map, people and systems involved, pain points, risks, and prioritised AI and automation opportunities. Each opportunity includes implementation detail, user stories, and acceptance criteria.
+
+The roadmap then converts the recommendations into practical delivery phases. Project chat can stay grounded in the uploaded evidence and the completed report.
+
+Codex accelerated the full build loop. I used GPT Five Point Six to shape the architecture, implement and test the product, prepare realistic source documents, and verify the finished experience with Playwright. The result is FlowLens: a focused SaaS workflow for turning process evidence into transformation decisions.

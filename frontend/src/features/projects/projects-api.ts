@@ -24,7 +24,9 @@ export async function uploadDocument(projectId: string, file: File) {
 }
 
 export async function generateAnalysis(projectId: string) {
-  const { data } = await apiClient.post<AnalysisRun>(`/projects/${projectId}/analysis`);
+  const { data } = await apiClient.post<AnalysisRun>(`/projects/${projectId}/analysis`, undefined, {
+    timeout: 300_000,
+  });
   return data;
 }
 
@@ -39,6 +41,10 @@ export async function listChatMessages(projectId: string) {
 }
 
 export async function sendChatMessage(projectId: string, message: string) {
-  const { data } = await apiClient.post<ChatMessage[]>(`/projects/${projectId}/chat`, { message });
+  const { data } = await apiClient.post<ChatMessage[]>(
+    `/projects/${projectId}/chat`,
+    { message },
+    { timeout: 90_000 },
+  );
   return data;
 }

@@ -1,6 +1,6 @@
 # Accounts payable invoice intake and approval SOP
 
-**Organisation:** Northstar Retail (fictional)  
+**Organisation:** Northstar Retail
 **Owner:** Finance Operations Manager  
 **Effective date:** 2026-07-01  
 **Systems:** Microsoft 365 shared mailbox, Coupa, NetSuite, SharePoint, Teams

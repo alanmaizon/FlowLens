@@ -15,6 +15,7 @@ import {
   sendChatMessage,
   uploadDocument,
 } from "@/features/projects/projects-api";
+import { AnalysisProgress } from "@/features/projects/analysis-progress";
 import { ReportDashboard } from "@/features/projects/report-dashboard";
 
 function formatSize(bytes: number) {
@@ -29,6 +30,7 @@ export function ProjectPage() {
   const fileInput = useRef<HTMLInputElement>(null);
   const [error, setError] = useState<string | null>(null);
   const [message, setMessage] = useState("");
+  const [analysisStartedAt, setAnalysisStartedAt] = useState<number | null>(null);
   const projectQuery = useQuery({
     queryKey: ["project", projectId],
     queryFn: () => getProject(projectId ?? ""),
@@ -54,11 +56,16 @@ export function ProjectPage() {
   });
   const analysisMutation = useMutation({
     mutationFn: () => generateAnalysis(projectId ?? ""),
+    onMutate: () => {
+      setError(null);
+      setAnalysisStartedAt(Date.now());
+    },
     onSuccess: async () => {
       await queryClient.invalidateQueries({ queryKey: ["report", projectId] });
     },
     onError: (requestError) =>
       setError(getApiErrorMessage(requestError, "Could not generate analysis.")),
+    onSettled: () => setAnalysisStartedAt(null),
   });
   const chatMutation = useMutation({
     mutationFn: () => sendChatMessage(projectId ?? "", message),
@@ -224,8 +231,14 @@ export function ProjectPage() {
             A structured decision view generated from the uploaded project evidence.
           </p>
         </div>
-        {reportQuery.isLoading && <p className="text-sm text-muted-foreground">Loading report…</p>}
-        {reportQuery.data?.report ? (
+        {analysisStartedAt ? (
+          <AnalysisProgress
+            documentCount={project.documents.length}
+            startedAt={analysisStartedAt}
+          />
+        ) : reportQuery.isLoading ? (
+          <p className="text-sm text-muted-foreground">Loading report…</p>
+        ) : reportQuery.data?.report ? (
           <ReportDashboard report={reportQuery.data.report} />
         ) : (
           <Card className="border-dashed">

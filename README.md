@@ -120,7 +120,7 @@ All server configuration is supplied through environment variables and documente
 | `ANTHROPIC_API_KEY` | Server-side credential for Claude analysis and project chat |
 | `ANTHROPIC_MODEL` | Structured analysis model; defaults to `claude-sonnet-5` |
 | `ANTHROPIC_CHAT_MODEL` | Optional different Claude model for project chat |
-| `ANTHROPIC_ANALYSIS_MAX_OUTPUT_TOKENS` | Analysis response budget; defaults to `8192` |
+| `ANTHROPIC_ANALYSIS_MAX_OUTPUT_TOKENS` | Analysis response budget; defaults to `16384` |
 | `ANTHROPIC_CHAT_MAX_OUTPUT_TOKENS` | Chat response budget; defaults to `2048` |
 | `STORAGE_LOCAL_PATH` | Local document root; `/data/uploads` in Docker |
 | `MAX_UPLOAD_SIZE_BYTES` | Per-file upload limit; defaults to 25 MB |

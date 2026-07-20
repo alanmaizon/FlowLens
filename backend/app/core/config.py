@@ -34,7 +34,7 @@ class Settings(BaseSettings):
     anthropic_api_key: SecretStr | None = None
     anthropic_model: str = "claude-sonnet-5"
     anthropic_chat_model: str | None = None
-    anthropic_analysis_max_output_tokens: int = Field(default=8_192, ge=256, le=128_000)
+    anthropic_analysis_max_output_tokens: int = Field(default=16_384, ge=256, le=128_000)
     anthropic_chat_max_output_tokens: int = Field(default=2_048, ge=128, le=128_000)
 
     @model_validator(mode="after")
